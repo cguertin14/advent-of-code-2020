@@ -26,3 +26,13 @@ jobs:
 
       - name: Run Tests
         run: make test
+
+            
+      - name: Convert Coverage
+        uses: jandelgado/gcov2lcov-action@v1.0.7
+
+      - name: Coveralls
+        uses: coverallsapp/github-action@v1.1.2
+        with:
+          github-token: ${{ secrets.GH_TOKEN }}
+          path-to-lcov: coverage.lcov

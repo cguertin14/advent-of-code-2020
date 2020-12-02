@@ -6,27 +6,36 @@ import (
 	"strings"
 )
 
-func strToArr(input string) (numbers []int) {
-	for _, i := range strings.Split(input, "\n") {
+// Reader is a struct to read stuff.
+type Reader struct {
+	Lines []string
+}
+
+// ToNumbers returns a list of numbers from the lines.
+func (reader *Reader) ToNumbers() (numbers []int) {
+	for _, i := range reader.Lines {
 		if num, err := strconv.Atoi(i); err == nil {
 			numbers = append(numbers, num)
 		}
 	}
-
 	return
 }
 
-// ReadFromFile reads a text file and returns its numbers.
-func ReadFromFile(path string) (numbers []int, err error) {
+// ReadFromFile reads a text file and
+// returns its individual lines.
+func (reader *Reader) ReadFromFile(path string) ([]string, error) {
 	data, err := ioutil.ReadFile(path)
 	if err != nil {
-		return
+		return nil, err
 	}
 
-	return strToArr(string(data)), nil
+	reader.Lines = strings.Split(string(data), "\n")
+
+	return reader.Lines, nil
 }
 
 // ReadFromLiteral reads a string and returns its numbers.
-func ReadFromLiteral(literal string) (numbers []int) {
-	return strToArr(literal)
+func (reader *Reader) ReadFromLiteral(literal string) []string {
+	reader.Lines = strings.Split(literal, "\n")
+	return reader.Lines
 }

@@ -23,12 +23,14 @@ func Command() *cobra.Command {
 
 // Execute runs the command.
 func Execute(cmd *cobra.Command, args []string) (err error) {
-	numbers, err := utils.ReadFromFile("cmd/day1/report.txt")
+	reader := utils.Reader{}
+	_, err = reader.ReadFromFile("cmd/day1/input.txt")
 	if err != nil {
 		return
 	}
 
 	// Get results of each challenge.
+	numbers := reader.ToNumbers()
 	one := partOne(numbers)
 	two := partTwo(numbers)
 

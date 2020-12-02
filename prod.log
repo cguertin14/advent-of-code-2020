@@ -1,0 +1,94 @@
+I, [2020-12-02T03:36:40.153626 #1]  INFO -- : [95beda3f-0730-41df-8cc6-f99d4a001599] Started GET "/admin/dashboard" for 10.28.1.20 at 2020-12-02 03:36:40 +0000
+I, [2020-12-02T03:36:40.155012 #1]  INFO -- : [95beda3f-0730-41df-8cc6-f99d4a001599] Processing by Admin::DashboardController#index as HTML
+I, [2020-12-02T03:36:40.232152 #1]  INFO -- : [95beda3f-0730-41df-8cc6-f99d4a001599]   Rendering admin/dashboard/index.html.erb within layouts/application
+I, [2020-12-02T03:36:40.242145 #1]  INFO -- : [95beda3f-0730-41df-8cc6-f99d4a001599]   Rendered layouts/_admin_nav.html.erb (1.0ms)
+I, [2020-12-02T03:36:40.255933 #1]  INFO -- : [95beda3f-0730-41df-8cc6-f99d4a001599]   Rendered admin/dashboard/index.html.erb within layouts/application (23.6ms)
+I, [2020-12-02T03:37:06.469579 #1]  INFO -- : [95beda3f-0730-41df-8cc6-f99d4a001599] Completed 200 OK in 26314ms (Views: 26232.6ms | ActiveRecord: 35.4ms)
+I, [2020-12-02T03:38:11.458973 #1]  INFO -- : [d31270cc-fdb0-41c3-9bf1-42a5ae493f19] Started GET "/assets/logo_frat.png" for 10.28.1.20 at 2020-12-02 03:38:11 +0000
+I, [2020-12-02T03:38:41.479765 #1]  INFO -- : [00a17277-1f21-4df9-9727-cb5deca16bf6] Started GET "/admin/orders" for 10.28.1.20 at 2020-12-02 03:38:41 +0000
+I, [2020-12-02T03:38:41.481297 #1]  INFO -- : [00a17277-1f21-4df9-9727-cb5deca16bf6] Processing by Admin::OrdersController#index as HTML
+I, [2020-12-02T03:38:41.490825 #1]  INFO -- : [00a17277-1f21-4df9-9727-cb5deca16bf6]   Rendering admin/orders/index.html.erb within layouts/application
+I, [2020-12-02T03:38:41.500423 #1]  INFO -- : [00a17277-1f21-4df9-9727-cb5deca16bf6]   Rendered layouts/_admin_nav.html.erb (1.3ms)
+I, [2020-12-02T03:38:41.568216 #1]  INFO -- : [00a17277-1f21-4df9-9727-cb5deca16bf6]   Rendered admin/orders/index.html.erb within layouts/application (77.2ms)
+I, [2020-12-02T03:38:41.569991 #1]  INFO -- : [00a17277-1f21-4df9-9727-cb5deca16bf6] Completed 200 OK in 89ms (Views: 64.4ms | ActiveRecord: 17.3ms)
+I, [2020-12-02T03:38:46.212838 #1]  INFO -- : [4f40677d-a72d-4329-940f-01f3314bfb1b] Started POST "/admin/orders" for 10.28.1.20 at 2020-12-02 03:38:46 +0000
+I, [2020-12-02T03:38:46.213910 #1]  INFO -- : [4f40677d-a72d-4329-940f-01f3314bfb1b] Processing by Admin::OrdersController#create as HTML
+I, [2020-12-02T03:38:46.214016 #1]  INFO -- : [4f40677d-a72d-4329-940f-01f3314bfb1b]   Parameters: {"utf8"=>"✓", "authenticity_token"=>"wRC/8ctNUV3VE7FDqoPbWqSAXaLgcDxtD4Vas0eco4iQ/WG6I9oYDk3W7n0fzUtrjGOACpnQSa47ofmVr1CV8w==", "order"=>{"3"=>{"status"=>"2", "fullname"=>"AEETS CE 18 - 19  ", "item"=>"7"}, "4"=>{"status"=>"2", "fullname"=>"AEETS CE 18 - 19  ", "item"=>"8"}}, "message"=>"Message lll", "order_id"=>"5", "commit"=>"Traiter la commande"}
+I, [2020-12-02T03:38:46.252905 #1]  INFO -- : [4f40677d-a72d-4329-940f-01f3314bfb1b] [ActiveJob] Enqueued ActionMailer::Parameterized::DeliveryJob (Job ID: 6cac025f-3b26-4013-980b-91b311f1c7f4) to Async(mailers) with arguments: "OrderMailer", "confirm_all_order_email", "deliver_now", {:order=>#<GlobalID:0x00007f149400b720 @uri=#<URI::GID gid://patch-ets/Order/5>>}
+I, [2020-12-02T03:38:46.253470 #1]  INFO -- : [4f40677d-a72d-4329-940f-01f3314bfb1b] Redirected to https://commande.fraternitedupiranha.com/admin/orders
+I, [2020-12-02T03:38:46.253721 #1]  INFO -- : [4f40677d-a72d-4329-940f-01f3314bfb1b] Completed 302 Found in 40ms (ActiveRecord: 17.7ms)
+I, [2020-12-02T03:38:46.282910 #1]  INFO -- : [ActiveJob] [ActionMailer::Parameterized::DeliveryJob] [6cac025f-3b26-4013-980b-91b311f1c7f4] Performing ActionMailer::Parameterized::DeliveryJob (Job ID: 6cac025f-3b26-4013-980b-91b311f1c7f4) from Async(mailers) with arguments: "OrderMailer", "confirm_all_order_email", "deliver_now", {:order=>#<GlobalID:0x00007f14cd66edb8 @uri=#<URI::GID gid://patch-ets/Order/5>>}
+I, [2020-12-02T03:38:46.289409 #1]  INFO -- : [ActiveJob] [ActionMailer::Parameterized::DeliveryJob] [6cac025f-3b26-4013-980b-91b311f1c7f4]   Rendering order_mailer/confirm_all_order_email.html.erb within layouts/mailer
+I, [2020-12-02T03:38:46.293332 #1]  INFO -- : [ActiveJob] [ActionMailer::Parameterized::DeliveryJob] [6cac025f-3b26-4013-980b-91b311f1c7f4]   Rendered order_mailer/confirm_all_order_email.html.erb within layouts/mailer (3.8ms)
+I, [2020-12-02T03:38:46.294630 #1]  INFO -- : [ActiveJob] [ActionMailer::Parameterized::DeliveryJob] [6cac025f-3b26-4013-980b-91b311f1c7f4]   Rendering order_mailer/confirm_all_order_email.text.erb within layouts/mailer
+I, [2020-12-02T03:38:46.295634 #1]  INFO -- : [ActiveJob] [ActionMailer::Parameterized::DeliveryJob] [6cac025f-3b26-4013-980b-91b311f1c7f4]   Rendered order_mailer/confirm_all_order_email.text.erb within layouts/mailer (0.9ms)
+I, [2020-12-02T03:38:46.592220 #1]  INFO -- : [6f144d3e-f9df-4592-90c4-a7db768bdc6e] Started GET "/assets/logo_frat.png" for 10.28.1.20 at 2020-12-02 03:38:46 +0000
+I, [2020-12-02T03:38:46.914923 #1]  INFO -- : [ActiveJob] [ActionMailer::Parameterized::DeliveryJob] [6cac025f-3b26-4013-980b-91b311f1c7f4] Sent mail to jeffersonbrutus348@gmail.com (617.2ms)
+E, [2020-12-02T03:38:46.915294 #1] ERROR -- : [ActiveJob] [ActionMailer::Parameterized::DeliveryJob] [6cac025f-3b26-4013-980b-91b311f1c7f4] Error performing ActionMailer::Parameterized::DeliveryJob (Job ID: 6cac025f-3b26-4013-980b-91b311f1c7f4) from Async(mailers) in 632.13ms: Net::SMTPAuthenticationError (534-5.7.14 <https://accounts.google.com/signin/continue?sarp=1&scc=1&plt=AKgnsbu
+):
+/usr/local/lib/ruby/2.5.0/net/smtp.rb:981:in `check_auth_response'
+/usr/local/lib/ruby/2.5.0/net/smtp.rb:736:in `auth_plain'
+/usr/local/lib/ruby/2.5.0/net/smtp.rb:728:in `authenticate'
+/usr/local/lib/ruby/2.5.0/net/smtp.rb:565:in `do_start'
+/usr/local/lib/ruby/2.5.0/net/smtp.rb:518:in `start'
+/usr/local/bundle/gems/mail-2.7.1/lib/mail/network/delivery_methods/smtp.rb:109:in `start_smtp_session'
+/usr/local/bundle/gems/mail-2.7.1/lib/mail/network/delivery_methods/smtp.rb:100:in `deliver!'
+/usr/local/bundle/gems/mail-2.7.1/lib/mail/message.rb:2159:in `do_delivery'
+/usr/local/bundle/gems/mail-2.7.1/lib/mail/message.rb:260:in `block in deliver'
+/usr/local/bundle/gems/actionmailer-5.2.4.4/lib/action_mailer/base.rb:560:in `block in deliver_mail'
+/usr/local/bundle/gems/activesupport-5.2.4.4/lib/active_support/notifications.rb:168:in `block in instrument'
+/usr/local/bundle/gems/activesupport-5.2.4.4/lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+/usr/local/bundle/gems/activesupport-5.2.4.4/lib/active_support/notifications.rb:168:in `instrument'
+/usr/local/bundle/gems/actionmailer-5.2.4.4/lib/action_mailer/base.rb:558:in `deliver_mail'
+/usr/local/bundle/gems/mail-2.7.1/lib/mail/message.rb:260:in `deliver'
+/usr/local/bundle/gems/actionmailer-5.2.4.4/lib/action_mailer/message_delivery.rb:114:in `block in deliver_now'
+/usr/local/bundle/gems/actionmailer-5.2.4.4/lib/action_mailer/rescuable.rb:17:in `handle_exceptions'
+/usr/local/bundle/gems/actionmailer-5.2.4.4/lib/action_mailer/message_delivery.rb:113:in `deliver_now'
+/usr/local/bundle/gems/actionmailer-5.2.4.4/lib/action_mailer/parameterized.rb:150:in `perform'
+/usr/local/bundle/gems/activejob-5.2.4.4/lib/active_job/execution.rb:39:in `block in perform_now'
+/usr/local/bundle/gems/activesupport-5.2.4.4/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+/usr/local/bundle/gems/i18n-1.8.5/lib/i18n.rb:313:in `with_locale'
+/usr/local/bundle/gems/activejob-5.2.4.4/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+/usr/local/bundle/gems/activesupport-5.2.4.4/lib/active_support/callbacks.rb:118:in `instance_exec'
+/usr/local/bundle/gems/activesupport-5.2.4.4/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/usr/local/bundle/gems/activejob-5.2.4.4/lib/active_job/logging.rb:26:in `block (4 levels) in <module:Logging>'
+/usr/local/bundle/gems/activesupport-5.2.4.4/lib/active_support/notifications.rb:168:in `block in instrument'
+/usr/local/bundle/gems/activesupport-5.2.4.4/lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+/usr/local/bundle/gems/activesupport-5.2.4.4/lib/active_support/notifications.rb:168:in `instrument'
+/usr/local/bundle/gems/activejob-5.2.4.4/lib/active_job/logging.rb:25:in `block (3 levels) in <module:Logging>'
+/usr/local/bundle/gems/activejob-5.2.4.4/lib/active_job/logging.rb:46:in `block in tag_logger'
+/usr/local/bundle/gems/activesupport-5.2.4.4/lib/active_support/tagged_logging.rb:71:in `block in tagged'
+/usr/local/bundle/gems/activesupport-5.2.4.4/lib/active_support/tagged_logging.rb:28:in `tagged'
+/usr/local/bundle/gems/activesupport-5.2.4.4/lib/active_support/tagged_logging.rb:71:in `tagged'
+/usr/local/bundle/gems/activejob-5.2.4.4/lib/active_job/logging.rb:46:in `tag_logger'
+/usr/local/bundle/gems/activejob-5.2.4.4/lib/active_job/logging.rb:22:in `block (2 levels) in <module:Logging>'
+/usr/local/bundle/gems/activesupport-5.2.4.4/lib/active_support/callbacks.rb:118:in `instance_exec'
+/usr/local/bundle/gems/activesupport-5.2.4.4/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/usr/local/bundle/gems/activesupport-5.2.4.4/lib/active_support/callbacks.rb:136:in `run_callbacks'
+/usr/local/bundle/gems/activejob-5.2.4.4/lib/active_job/execution.rb:38:in `perform_now'
+/usr/local/bundle/gems/activejob-5.2.4.4/lib/active_job/execution.rb:24:in `block in execute'
+/usr/local/bundle/gems/activesupport-5.2.4.4/lib/active_support/callbacks.rb:109:in `block in run_callbacks'
+/usr/local/bundle/gems/activejob-5.2.4.4/lib/active_job/railtie.rb:28:in `block (4 levels) in <class:Railtie>'
+/usr/local/bundle/gems/activesupport-5.2.4.4/lib/active_support/execution_wrapper.rb:87:in `wrap'
+/usr/local/bundle/gems/activesupport-5.2.4.4/lib/active_support/reloader.rb:73:in `block in wrap'
+/usr/local/bundle/gems/activesupport-5.2.4.4/lib/active_support/execution_wrapper.rb:87:in `wrap'
+/usr/local/bundle/gems/activesupport-5.2.4.4/lib/active_support/reloader.rb:72:in `wrap'
+/usr/local/bundle/gems/activejob-5.2.4.4/lib/active_job/railtie.rb:27:in `block (3 levels) in <class:Railtie>'
+/usr/local/bundle/gems/activesupport-5.2.4.4/lib/active_support/callbacks.rb:118:in `instance_exec'
+/usr/local/bundle/gems/activesupport-5.2.4.4/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/usr/local/bundle/gems/activesupport-5.2.4.4/lib/active_support/callbacks.rb:136:in `run_callbacks'
+/usr/local/bundle/gems/activejob-5.2.4.4/lib/active_job/execution.rb:22:in `execute'
+/usr/local/bundle/gems/activejob-5.2.4.4/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
+/usr/local/bundle/gems/concurrent-ruby-1.1.7/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:363:in `run_task'
+/usr/local/bundle/gems/concurrent-ruby-1.1.7/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `block (3 levels) in create_worker'
+/usr/local/bundle/gems/concurrent-ruby-1.1.7/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:335:in `loop'
+/usr/local/bundle/gems/concurrent-ruby-1.1.7/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:335:in `block (2 levels) in create_worker'
+/usr/local/bundle/gems/concurrent-ruby-1.1.7/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `catch'
+/usr/local/bundle/gems/concurrent-ruby-1.1.7/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block in create_worker'
+/usr/local/bundle/gems/logging-2.3.0/lib/logging/diagnostic_context.rb:474:in `block in create_with_logging_context'
+I, [2020-12-02T03:38:50.317594 #1]  INFO -- : [3fcbb869-1622-433d-a779-9bcd95bfe395] Started GET "/sign-in" for 10.28.1.20 at 2020-12-02 03:38:50 +0000
+I, [2020-12-02T03:38:50.318934 #1]  INFO -- : [3fcbb869-1622-433d-a779-9bcd95bfe395] Processing by Devise::SessionsController#new as HTML
+I, [2020-12-02T03:38:50.327095 #1]  INFO -- : [3fcbb869-1622-433d-a779-9bcd95bfe395] Redirected to https://commande.fraternitedupiranha.com/admin/dashboard
+I, [2020-12-02T03:38:50.327262 #1]  INFO -- : [3fcbb869-1622-433d-a779-9bcd95bfe395] Filter chain halted as :require_no_authentication rendered or redirected
+I, [2020-12-02T03:38:50.327415 #1]  INFO -- : [3fcbb869-1622-433d-a779-9bcd95bfe395] Completed 302 Found in 8ms (ActiveRecord: 1.0ms)
+I, [2020-12-02T03:38:50.613720 #1]  INFO -- : [a7deeaac-711e-4652-b2c1-086e085c8db6] Started GET "/assets/logo_frat.png" for 10.28.1.20 at 2020-12-02 03:38:50 +0000

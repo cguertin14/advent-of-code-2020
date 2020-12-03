@@ -35,14 +35,15 @@ func Execute(cmd *cobra.Command, args []string) (err error) {
 		return
 	}
 
-	countTrees(reader)
+	fmt.Printf("Part one: %d\n", partOne(reader))
+	fmt.Printf("Part two: %d\n", partTwo(reader))
 
 	return
 }
 
-func countTrees(reader utils.Reader) {
+func countTrees(reader utils.Reader) (trees [][]bool) {
 	lines := reader.Lines
-	trees := make([][]bool, len(lines))
+	trees = make([][]bool, len(lines))
 
 	for i, s := range lines {
 		trees[i] = make([]bool, len(s))
@@ -51,16 +52,7 @@ func countTrees(reader utils.Reader) {
 		}
 	}
 
-	// Part one
-	fmt.Println(fmt.Sprintf("There are %d trees in part one.", checkSlope(1, 3, trees)))
-
-	// Part two
-	a := checkSlope(1, 1, trees)
-	b := checkSlope(1, 3, trees)
-	c := checkSlope(1, 5, trees)
-	d := checkSlope(1, 7, trees)
-	e := checkSlope(2, 1, trees)
-	fmt.Printf("Part two: %d\n", a*b*c*d*e)
+	return
 }
 
 func checkSlope(down, right int, trees [][]bool) (count int) {
@@ -73,4 +65,20 @@ func checkSlope(down, right int, trees [][]bool) (count int) {
 		}
 	}
 	return
+}
+
+func partOne(reader utils.Reader) int {
+	return checkSlope(1, 3, countTrees(reader))
+}
+
+func partTwo(reader utils.Reader) int {
+	trees := countTrees(reader)
+
+	a := checkSlope(1, 1, trees)
+	b := checkSlope(1, 3, trees)
+	c := checkSlope(1, 5, trees)
+	d := checkSlope(1, 7, trees)
+	e := checkSlope(2, 1, trees)
+
+	return a * b * c * d * e
 }

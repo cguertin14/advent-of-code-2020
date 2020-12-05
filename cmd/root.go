@@ -8,6 +8,7 @@ import (
 	"github.com/cguertin14/advent-of-code-2020/cmd/day2"
 	"github.com/cguertin14/advent-of-code-2020/cmd/day3"
 	"github.com/cguertin14/advent-of-code-2020/cmd/day4"
+	"github.com/cguertin14/advent-of-code-2020/cmd/day5"
 	"github.com/spf13/cobra"
 )
 
@@ -23,6 +24,7 @@ func init() {
 	rootCmd.AddCommand(day2.Command())
 	rootCmd.AddCommand(day3.Command())
 	rootCmd.AddCommand(day4.Command())
+	rootCmd.AddCommand(day5.Command())
 }
 
 // Execute is the function that runs the cobra command.

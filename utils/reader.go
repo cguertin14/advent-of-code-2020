@@ -4,6 +4,7 @@ import (
 	"io/ioutil"
 	"strconv"
 	"strings"
+	"sync"
 )
 
 // Reader is a struct to read stuff.
@@ -22,12 +23,19 @@ func (reader *Reader) ToNumbers() (numbers []int) {
 }
 
 func (reader *Reader) read(path, separator string) ([]string, error) {
-	data, err := ioutil.ReadFile(path)
-	if err != nil {
-		return nil, err
-	}
+	wg := sync.WaitGroup{}
+	wg.Add(1)
 
-	reader.Lines = strings.Split(string(data), separator)
+	go func() {
+		defer wg.Done()
+		data, err := ioutil.ReadFile(path)
+		if err != nil {
+			return
+		}
+		reader.Lines = strings.Split(string(data), separator)
+	}()
+
+	wg.Wait()
 
 	return reader.Lines, nil
 }

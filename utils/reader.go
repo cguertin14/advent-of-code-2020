@@ -21,21 +21,37 @@ func (reader *Reader) ToNumbers() (numbers []int) {
 	return
 }
 
-// ReadFromFile reads a text file and
-// returns its individual lines.
-func (reader *Reader) ReadFromFile(path string) ([]string, error) {
+func (reader *Reader) read(path, separator string) ([]string, error) {
 	data, err := ioutil.ReadFile(path)
 	if err != nil {
 		return nil, err
 	}
 
-	reader.Lines = strings.Split(string(data), "\n")
+	reader.Lines = strings.Split(string(data), separator)
 
 	return reader.Lines, nil
 }
 
-// ReadFromLiteral reads a string and returns its numbers.
+// ReadFromFile reads a text file and
+// returns its individual lines.
+func (reader *Reader) ReadFromFile(path string) ([]string, error) {
+	return reader.read(path, "\n")
+}
+
+// ReadFromLiteral reads a string and returns its content.
 func (reader *Reader) ReadFromLiteral(literal string) []string {
 	reader.Lines = strings.Split(literal, "\n")
 	return reader.Lines
+}
+
+// ReadFromLiteralDouble reads a string separated by double lines
+// and returns its content.
+func (reader *Reader) ReadFromLiteralDouble(literal string) []string {
+	reader.Lines = strings.Split(literal, "\n\n")
+	return reader.Lines
+}
+
+// ReadFromFileDouble reads a file's content separating by "\n\n".
+func (reader *Reader) ReadFromFileDouble(path string) ([]string, error) {
+	return reader.read(path, "\n\n")
 }
